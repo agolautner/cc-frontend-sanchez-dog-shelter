@@ -129,15 +129,13 @@ nav ul li a {
     color: #d66e1d;
 }
 
-section {
+/* section {
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
 
     height: 80vh;
-
-/*     margin: 20px; */
     padding: 20px;
 
     background-color: #f7f6ed;
@@ -159,7 +157,7 @@ section {
     margin-right: auto;
     max-width: 50%;
     max-height: 100%;
-}
+} */
 
 .banner {
     display: flex;
