@@ -73,6 +73,12 @@ h1 {
     font-family: 'Abril Fatface', cursive;
     font-size: 120px;
     color: #f7f6ed;
+    text-decoration: underline #d66e1d 30px;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 }
 
 #main-logo img {
@@ -115,11 +121,12 @@ nav ul li {
 
 nav ul li a:hover {
     color: #d66e1d;
+    text-decoration: underline 2px #BFD795;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: black;
+    color: #d66e1d;
 }
 
 section {
@@ -152,4 +159,19 @@ section {
     margin-right: auto;
     max-width: 50%;
     max-height: 100%;
+}
+
+.banner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100vw;
+    height: 10vh;
+    padding: 20px;
+
+    background-color: #BFD795;
+
+    font-size: xx-large;
+    font-weight: bold;
+    color: #f7f6ed;
 }
