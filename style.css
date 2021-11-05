@@ -140,6 +140,7 @@ header {
     z-index: 25;
 
     font-weight: 700;
+    text-align: center;
 
     transition: 400ms;
     background-color: #f7f6ed;
