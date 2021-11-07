@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 70px;
     color: #f7f6ed;
     text-decoration: underline #d66e1d 20px;
 
@@ -140,7 +140,6 @@ header {
     z-index: 25;
 
     font-weight: 700;
-    text-align: center;
 
     transition: 400ms;
     background-color: #f7f6ed;
@@ -150,7 +149,9 @@ header {
 }
 
 .nav-item {
-    font-size: 36px;
+    margin-left: 20px;
+
+    font-size: 45px;
     text-transform: uppercase;
 }
 
@@ -161,4 +162,237 @@ header {
 .nav-item a:hover {
     color: #d66e1d;
     text-decoration: underline 2px #7ba535;
+}
+
+/*Cards section css*/
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+
+    margin: 80px 0px;
+}
+
+.card {
+    position: relative;
+
+    width: 80%;
+    min-width: 280px;
+
+    margin: 30px 20px;
+    padding: 10px;
+    border-radius: 2px;
+    background-image: linear-gradient(#bfd795 0%,#f7f6ed 80%);
+    background-color: #7ba535;
+    box-shadow: 10px 10px 20px #00000044;
+
+    text-align: center;
+
+}
+
+
+.card img {
+    width: 100%;
+    height: auto;
+
+    filter: grayscale(10%);
+    transition: filter;
+    transition-duration: 400ms;
+}
+
+.card:hover img {
+    filter: grayscale(100%) brightness(20%);
+}
+
+.card h3 {
+    margin: 25px 0px 20px 0px;
+
+    font-size: 32px;
+    color: #842361;
+    text-shadow: 2px 2px 3px #84236188;
+}
+
+.card p {
+    position: absolute;
+    left: 50%;
+    top: 41%;
+
+    width: 80%;
+    
+
+    font-size: calc(12px + 1.35vw);
+    line-height: 6vw;
+    color: #bfd795;
+    opacity: 0;
+    
+    transform: translate(-50%, -50%) scale(1.2);
+    transition: opacity, transform;
+    transition-duration: 200ms;
+}
+
+.card:hover p {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+
+/*Rólunk és Önkéntesség*/
+
+main article {
+    padding: 15px; 
+
+    background-color: #f7f6ed;
+
+    text-align: justify;
+    line-height: 4vw;
+}
+
+main section {
+    padding: 15px;
+
+    text-align: justify;
+    line-height: 4vw;
+}
+
+/*Rólunk-article (id="about-us") és Donation-section (id="donation")*/
+
+main article#about-us h2 {
+    margin: 30px 0px 20px;
+
+    font-size: 36px;
+    color: #d66e1d;
+}
+
+main article#about-us h4 {
+    padding: 15px 5px 5px;
+
+    font-size: 20px;
+    color: #d66e1d;
+}
+
+
+ul#activities-list li {
+    display: list-item;
+    list-style-position: outside;
+    list-style-type: disc;
+
+    margin: 10px 20px;
+}
+
+button#get-to-know {
+    position: relative;
+    left: 50%;
+
+    border-radius: 5px;
+
+    background-color: #bfd795;
+
+    color: #842361;
+    font-size: 16px;
+    font-weight: 700;
+
+    transform: translateX(-50%);
+}
+
+section#donation {
+    position: relative;
+    padding: 15px 20px 50px; 
+
+    background-color: #842361;
+
+    text-align: center;
+    color: #f7f6ed;
+    font-size: 18px;
+}
+
+img[alt="Közös kutyasétáltatás"] {
+    position: relative;
+    left: 50%;
+   
+    width: 90vw;
+    margin: 20px 10px;
+    
+    transform: translateX(-50%);
+}
+
+#donation-button {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    border-radius: 5px;
+
+    background-color: #f7f6ed;
+    box-shadow: 0px 2px 5px #f7f6ed;
+
+    color: #7ba535;
+    font-size: 18px;
+    font-weight: 700;
+
+    transform: translateX(-50%);
+}
+
+/*Önkéntesség-article (id="volunteering") és Volunteering-section (id="volunteering")*/
+
+section#volunteering {
+    position: relative;
+
+    padding: 15px 20px 50px; 
+
+    background-color: #d66e1d;
+
+    font-size: 18px; 
+    color: #f7f6ed;
+    text-align: center;
+}
+
+main article#volunteering h2 {
+    padding: 30px 0px 20px;
+
+    font-size: 36px;
+    color: #d66e1d;
+}
+
+main article#volunteering h4 {
+    padding: 15px 0px 5px;
+
+    font-size: 20px;
+    color: #d66e1d;
+}
+
+ul#volunteering-list li {
+    display: list-item;
+    list-style-position: outside;
+    list-style-type: disc;
+
+    margin: 5px 20px;
+}
+
+img[alt="Egy lelkes önkéntesünk"] {
+    position: relative;
+    left: 50%;
+   
+    width: 90vw;
+    margin: 20px 10px;
+    
+    transform: translateX(-50%);
+}
+
+#volunteering-button {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    border-radius: 5px;
+
+    background-color: #f7f6ed;
+    box-shadow: 0px 2px 5px #f7f6ed;
+
+    font-size: 18px;
+    font-weight: 700;
+    color: #7ba535;
+
+    transform: translateX(-50%);
 }
