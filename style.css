@@ -1,16 +1,84 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -19,22 +87,38 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
 body {
+	max-width: 1600px;
+	margin: 0 auto;
+
 	line-height: 1;
 }
-ol, ul {
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
 	content: none;
 }
 table {
@@ -43,470 +127,689 @@ table {
 }
 /*END CSS RESET*/
 
+html {
+	background-image: url(https://images.unsplash.com/photo-1444212477490-ca407925329e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1228&q=80);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
 body {
-    font-family: 'Varela Round', sans-serif;
+	font-family: "Varela Round", sans-serif;
 }
 
-h1, h2, h3, h4, h5 {
-    font-family: 'Quicksand', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: "Quicksand", sans-serif;
 }
 
-#bg-img-main {
-    object-fit: cover;
-    height: 100vh;
-    width: 100%;
-}
+/* #bg-img-main {
+	display: none;
+	object-fit: cover;
+	height: 100vh;
+	width: 100%;
+} */
 
 #main-logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+	height: 100vh;
+	max-width: 100%;
 
-    text-align: center;
+	text-align: center;
 }
 
 h1 {
-    font-size: 70px;
-    color: #f7f6ed;
-    text-decoration: underline #d66e1d 20px;
+	font-size: 70px;
+	color: #f7f6ed;
+	text-decoration: underline #d66e1d 20px;
+	filter: drop-shadow(3px 3px 1px #d66e1d);
 
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
 }
 
 h1:hover {
-    text-decoration: underline #7ba535 20px;
+	text-decoration: underline #7ba535 20px;
+	filter: drop-shadow(3px 3px 3px #7ba535);
+}
+
+/* OPTIMIZING HEADING FOR EXTRA SMALL SCREENS */
+@media screen and (max-width: 385px) {
+	h1 {
+		font-size: 50px;
+		text-decoration: underline #d66e1d 10px;
+	}
+
+	h1:hover {
+		text-decoration: underline #7ba535 10px;
+	}
 }
 
 /* NAVBAR */
 header {
-    position: fixed;
-    width: 100vw;
-    z-index: 20;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	z-index: 20;
 
-    background-color: #f7f6ed;
+	background-color: #f7f6ed;
 }
 
 #top-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    height: 10vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	height: 10vh;
+
+	background-color: #f7f6ed;
 }
 
 #nav-logo {
-    height: 8vh;
-    margin: 1vh;
+	height: 8vh;
+	margin: 1vh;
 
-    z-index: 100;
+	z-index: 100;
 
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
 }
 
 #hamburger {
-    width: 8vh;
-    height: 8vh;
-    border: 2px solid #7ba535;
-    border-radius: 1px;
-    margin: 1vh;
+	position: fixed;
+	top: 1vh;
+	right: 1vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-    background-color: transparent;
-    z-index: 100;
+	width: 8vh;
+	height: 8vh;
+	border: 2px solid #7ba535;
+	border-radius: 1px;
+	/* margin: 1vh; */
 
-    color: #842361;
-    font-size: x-large;
-    text-align: center;
+	background-color: transparent;
+	z-index: 100;
+
+	color: #842361;
+	font-size: x-large;
+	text-align: center;
+}
+
+svg {
+	height: 48px;
+	width: 48px;
 }
 
 #nav-list {
-    position: fixed;
-    top: -100vh;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+	position: fixed;
+	top: -100vh;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
 
-    z-index: 25;
+	z-index: 25;
 
-    font-weight: 700;
+	text-align: center;
+	font-weight: 700;
 
-    transition: 400ms;
-    background-color: #f7f6ed;
+	transition: 400ms;
+	background-color: #f7f6ed;
 }
 #nav-list.show {
-    top: 0;
+	top: 0;
 }
 
 .nav-item {
-    margin-left: 20px;
-
-    font-size: 45px;
-    text-transform: uppercase;
+	font-size: 30px;
+	text-transform: uppercase;
 }
 
 .nav-item a {
-    text-decoration: none;
-    color: #d66e1d;
+	text-decoration: none;
+	color: #d66e1d;
 }
 .nav-item a:hover {
-    color: #d66e1d;
-    text-decoration: underline 2px #7ba535;
+	color: #d66e1d;
+	text-decoration: underline 2px #7ba535;
 }
 
 /*Cards section css*/
 
 #cards {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
 
-    width: 100vw;
+	width: 100%;
+	padding: 80px 0px;
 
-    margin: 80px 0px;
+	background-color: #bfd795;
+	background-image: linear-gradient(#bfd795 0%, #f7f6ed 100%);
 }
 
 .card {
-    position: relative;
+	position: relative;
 
-    width: 80%;
-    min-width: 280px;
+	width: 80%;
+	min-width: 280px;
 
-    margin: 30px auto;
-    padding: 10px;
-    border-radius: 2px;
-    background-image: linear-gradient(#bfd795 40%,#f7f6ed 90%);
-    background-color: #7ba535;
-    box-shadow: 10px 10px 20px #00000044;
+	margin: 30px auto;
+	padding: 10px;
+	border-radius: 1px;
+	background-color: #7ba535;
+	background-image: linear-gradient(#842361 20%, #f7f6ed 90%);
+	box-shadow: 10px 10px 15px #00000055;
 
-    text-align: center;
+	text-align: center;
 }
 
 .card img {
-    width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
 
-    filter: grayscale(10%);
-    transition: filter;
-    transition-duration: 400ms;
+	filter: grayscale(10%);
+	transition: filter;
+	transition-duration: 400ms;
 }
 
 .card:hover img {
-    filter: grayscale(100%) brightness(20%);
+	filter: grayscale(100%) brightness(20%);
 }
 
 .card h3 {
-    margin: 25px 0px 20px 0px;
+	margin: 25px 0px 20px 0px;
 
-    font-size: 32px;
-    color: #842361;
-    text-shadow: 2px 2px 3px #84236188;
+	font-size: 32px;
+	color: #842361;
+	text-shadow: 2px 2px 3px #84236188;
 }
 
 .card p {
-    position: absolute;
-    left: 50%;
-    top: 41%;
+	position: absolute;
+	left: 50%;
+	top: 41%;
 
-    width: 80%;    
+	width: 80%;
 
-    font-size: calc(12px + 1.35vw);
-    line-height: 6vw;
-    color: #bfd795;
-    opacity: 0;
-    
-    transform: translate(-50%, -50%) scale(1.2);
-    transition: opacity, transform;
-    transition-duration: 200ms;
+	font-size: calc(12px + 1.35vw);
+	line-height: 6vw;
+	color: #f7f6ed;
+	opacity: 0;
+
+	transform: translate(-50%, -50%) scale(1.2);
+	transition: opacity, transform;
+	transition-duration: 200ms;
 }
 
 .card:hover p {
-    opacity: 1;
-    transform: translate(-50%, -50%);
+	opacity: 1;
+	transform: translate(-50%, -50%);
 }
-
 
 /*Rólunk és Önkéntesség*/
 
-main article { /*Specifitás!*/
-    padding: 15px; 
+article#about-us,article#volunteering {
+	padding: 15px;
 
-    background-color: #f7f6ed;
+	background-color: #f7f6ed;
 
-    text-align: justify;
-    line-height: 4vw;
+	text-align: justify;
+	line-height: 4vw;
 }
 
-main section { /*Specifitás!*/
-    padding: 15px;
+section#donation,section#volunteering-section {
+	padding: 15px;
 
-    text-align: justify;
-    line-height: 4vw;
+	text-align: justify;
+	line-height: 4vw;
 }
 
 /*Rólunk-article (id="about-us") és Donation-section (id="donation")*/
 
-main article#about-us h2 {
-    margin: 30px 0px 20px;
+article#about-us h2 {
+	margin: 30px 0px 20px;
 
-    font-size: 36px;
-    color: #d66e1d;
+	font-size: 36px;
+	color: #d66e1d;
 }
 
-main article#about-us h4 {
-    padding: 15px 5px 5px;
+article#about-us h4 {
+	padding: 15px 5px 5px;
 
-    font-size: 20px;
-    color: #d66e1d;
+	font-size: 20px;
+	color: #d66e1d;
 }
-
 
 ul#activities-list li {
-    display: list-item;
-    list-style-position: outside;
-    list-style-type: disc;
+	display: list-item;
+	list-style-position: outside;
+	list-style-type: disc;
 
-    margin: 10px 20px;
+	margin: 10px 20px;
 }
 
 button#get-to-know {
-    position: relative;
-    left: 50%;
+	position: relative;
+	left: 50%;
 
-    border-radius: 5px;
+	border-radius: 5px;
 
-    background-color: #bfd795;
+	background-color: #bfd795;
 
-    color: #842361;
-    font-size: 16px;
-    font-weight: 700;
+	color: #842361;
+	font-size: 16px;
+	font-weight: 700;
 
-    transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+button#get-to-know:hover {
+	color: #d66e1d;
+	text-decoration: underline 2px;
 }
 
 section#donation {
-    position: relative;
-    padding: 15px 20px 50px; 
+	position: relative;
+	padding: 15px 20px 50px;
 
-    background-color: #842361;
+	background-color: #842361;
+	box-shadow: 0px 15px 20px #00000066;
 
-    text-align: center;
-    color: #f7f6ed;
-    font-size: 18px;
+	text-align: center;
+	color: #f7f6ed;
+	font-size: 18px;
 }
 
-img[alt="Közös kutyasétáltatás"] {   /*Specifitás!*/
-    position: relative;
-    left: 50%;
-   
-    width: 90vw;
-    margin: 20px 10px;
-    
-    transform: translateX(-50%);
+.article-img {
+	position: relative;
+	left: 50%;
+
+	width: 90vw;
+	margin: 20px 10px;
+
+	transform: translateX(-50%);
 }
 
 #donation-button {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    border-radius: 5px;
+	position: absolute;
+	bottom: 15px;
+	left: 50%;
+	border-radius: 5px;
 
-    background-color: #f7f6ed;
-    box-shadow: 0px 2px 5px #f7f6ed;
+	background-color: #f7f6ed;
+	box-shadow: 0px 2px 5px #f7f6ed;
 
-    color: #7ba535;
-    font-size: 18px;
-    font-weight: 700;
+	color: #7ba535;
+	font-size: 18px;
+	font-weight: 700;
 
-    transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+#donation-button:hover {
+	color: #d66e1d;
+	text-decoration: underline 2px;
 }
 
 /*Önkéntesség-article (id="volunteering") és Volunteering-section (id="volunteering")*/
 
-section#volunteering {
-    position: relative;
+section#volunteering-section {
+	position: relative;
 
-    padding: 15px 20px 50px; 
+	padding: 15px 20px 50px;
 
-    background-color: #d66e1d;
+	background-color: #d66e1d;
 
-    font-size: 18px; 
-    color: #f7f6ed;
-    text-align: center;
+	font-size: 18px;
+	color: #f7f6ed;
+	text-align: center;
 }
 
-main article#volunteering h2 {
-    padding: 30px 0px 20px;
+article#volunteering h2 {
+	padding: 30px 0px 20px;
 
-    font-size: 36px;
-    color: #d66e1d;
+	font-size: 36px;
+	color: #d66e1d;
 }
 
-main article#volunteering h4 {
-    padding: 15px 0px 5px;
+article#volunteering h4 {
+	padding: 15px 0px 5px;
 
-    font-size: 20px;
-    color: #d66e1d;
+	font-size: 20px;
+	color: #d66e1d;
 }
 
 ul#volunteering-list li {
-    display: list-item;
-    list-style-position: outside;
-    list-style-type: disc;
+	display: list-item;
+	list-style-position: outside;
+	list-style-type: disc;
 
-    margin: 5px 20px;
-}
-
-img[alt="Egy lelkes önkéntesünk"] {  /*Specifitás!*/
-    position: relative;
-    left: 50%;
-   
-    width: 90vw;
-    margin: 20px 10px;
-    
-    transform: translateX(-50%);
+	margin: 5px 20px;
 }
 
 #volunteering-button {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    border-radius: 5px;
+	position: absolute;
+	bottom: 15px;
+	left: 50%;
+	border-radius: 5px;
 
-    background-color: #f7f6ed;
-    box-shadow: 0px 2px 5px #f7f6ed;
+	background-color: #f7f6ed;
+	box-shadow: 0px 2px 5px #f7f6ed;
 
-    font-size: 18px;
-    font-weight: 700;
-    color: #7ba535;
+	font-size: 18px;
+	font-weight: 700;
+	color: #7ba535;
 
-    transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+#volunteering-button:hover {
+	color: #842361;
+	text-decoration: underline 2px;
 }
 
 /*Form section css*/
-form
-{
-
-    background-color: #f7f6ed;
-    width: 100%;
-    text-align: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-form input,textarea
-{
-    width: 95%;
-    padding: 0;
-    margin-top: 5px;
-    border: 2px groove white;
-    border-radius: 5px;
-}
-
-form div
-{
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-form label
-{
-    position: absolute;
-    left: 25%;
-    transform: translateY(25%);
+form {
+	background-color: #f7f6ed;
+	width: 100%;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 
 
-form button
-{
-    margin-top: 10px;
-    position: relative;
-    border-radius: 5px;
-
-    background-color: #842361;
-    box-shadow: 0px 2px 5px #7ba535;
-
-    font-size: 18px;
-    font-weight: 700;
-    color: #f7f6ed;
+form input,
+textarea {
+    height: 25px;
+	width: 95%;
+	padding: 0;
+	margin-top: 5px;
+	border: 2px groove white;
+	border-radius: 5px;
 }
 
-/*Media querry for tablet sized screens*/
+form div {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+form label {
+	position: absolute;
+	left: 25%;
+	transform: translateY(50%);
+}
+
+form button {
+	margin-top: 10px;
+	position: relative;
+	border-radius: 5px;
+
+	background-color: #842361;
+	box-shadow: 0px 2px 5px #7ba535;
+
+	font-size: 18px;
+	font-weight: 700;
+	color: #f7f6ed;
+}
+form textarea#message
+{
+    height:200px;
+}
+
+/*Footer*/
+.flexFooter {
+	display: flex;
+	flex-wrap: nowrap;
+	background-color: #bfd795;
+	flex-basis: auto;
+
+	align-items: flex-start;
+	align-content: flex-start;
+}
+
+.box {
+	text-align: center;
+	margin: 10px;
+	width: 50%;
+	line-height: 30px;
+	font-size: small;
+}
+
+.flexFooter h3 {
+	color: #631847;
+	text-decoration: underline #d66e1d 2px;
+	margin-bottom: 10px;
+}
+
+.flexFooter a {
+	display: block;
+	margin-top: 5px;
+	background-color: #631847;
+	border: #842361 solid 1px;
+	text-decoration: underline #d66e1d 1px;
+	color: #f7f6ed;
+}
+
+.box button {
+	margin-top: 20px;
+	background-color: #d66e1d;
+	color: #f7f6ed;
+	border: solid 1px #7ba535;
+}
+
+/*Media query for tablet sized screens*/
 
 @media screen and (min-width: 650px) and (max-width: 1020px) {
-    
-    /*Cards section css*/
+	/* NAVBAR */
+	.nav-item {
+		font-size: 45px;
+	}
 
-    #cards {
-        width: 100vw;
+	/*Cards section css*/
 
-        margin: 50px 0px;
-    }
+	#cards {
+		/* REPLACED MARGIN WITH PADDING */
+		/* margin: 50px 0px; */
+		padding: 50px 0px;
+	}
 
-    .card {
-        width: 28%;
-        min-width: 360px;
+	.card {
+		width: 28%;
+		min-width: 360px;
 
-        margin: 30px 20px;
-        padding: 15px;
-        border-radius: 2px;
-        box-shadow: 10px 10px 20px #00000044;
-    }
+		margin: 30px 20px;
+	}
 
-    .card h3 {
-        margin: 15px 0px 15px 0px;
-    }
-    
-    .card p {
-        width: 85%;    
-    
-        font-size: 18px;
-        line-height: 32px;
-    }
+	.card h3 {
+		margin: 20px 0px 15px 0px;
+	}
 
+	.card p {
+		width: 85%;
+
+		font-size: 18px;
+		line-height: 32px;
+	}
+
+	/*Rólunk és Önkéntesség*/
+
+	article#about-us,article#volunteering {
+		padding: 20px;
+
+		line-height: 3vw;
+	}
+
+	section#donation,section#volunteering-section {
+		line-height: 3vw;
+	}
+
+	/*Rólunk-article (id="about-us") és Donation-section (id="donation")*/
+
+	button#get-to-know {
+		margin: 20px 5px;
+
+		font-size: 18px;
+	}
+	
+	section#donation p {
+		margin: 5px 10px;
+
+		font-size: 18px;
+	}
+
+	.article-img {
+		width: 75vw;
+	}
+
+	/*Önkéntesség-article (id="volunteering") és Volunteering-section (id="volunteering")*/
+
+	ul#volunteering-list li {
+		margin: 5px 40px;
+	}
 }
 
-/*Media querry for desktop sized screens*/
+/*Media query for desktop sized screens*/
 
 @media screen and (min-width: 1021px) {
-    
-    /*Cards section css*/
+	/* NAVBAR */
+	#hamburger {
+		display: none;
+	}
 
-    #cards {
-        width: 100vw;
+	#top-nav {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		height: 10vh;
+	}
 
-        margin: 50px 0px;
-    }
+	#nav-list {
+		display: flex;
+		flex-direction: row;
+		position: fixed;
+		top: 0;
+		right: 0;
+		justify-content: flex-end;
+		align-items: center;
+		max-width: 100%;
+		max-height: 10vh;
+	
+		z-index: 25;
+	
+		font-weight: 700;
+	
+		transition: 400ms;
+		background-color: #f7f6ed;
 
-    .card {
-        width: 25%;
-        min-width: 320px;
+	}
 
-        margin: 30px 15px;
-        padding: 15px;
-        border-radius: 2px;
-        box-shadow: 10px 10px 20px #00000044;
-    }
+	.nav-item {
+		margin-left: 60px;
+	
+		font-size: 20px;
+	}
+	.nav-item:last-of-type {
+		margin-right: 20px;
+	}
 
-    .card h3 {
-        margin: 0px 0px 15px 0px;
-    }
-    
-    .card p {
-        width: 85%;    
-    
-        font-size: 18px;
-        line-height: 32px;
-    }
+	/*Cards section css*/
+
+	#cards {
+		padding: 80px 0px;
+	}
+
+	.card {
+		width: 25%;
+		min-width: 320px;
+		max-width: 400px;
+
+		margin: 30px 20px;
+	}
+
+	.card h3 {
+		margin: 20px 0px 15px 0px;
+	}
+
+	.card p {
+		width: 85%;
+
+		font-size: 18px;
+		line-height: 28px;
+	}
+
+	/*Rólunk és Önkéntesség*/
+
+	article#about-us,article#volunteering {
+		padding: 30px;
+
+		line-height: 2vw;
+	}
+
+	section#donation,section#volunteering-section {
+		line-height: 2vw;
+	}
+
+	/*Rólunk-article (id="about-us") és Donation-section (id="donation")*/
+
+	button#get-to-know {
+		margin: 20px 5px;
+
+		font-size: 20px;
+	}
+	
+	section#donation p {
+		margin: 10px 10px;
+
+		font-size: 20px;
+	}
+
+	#donation-button {
+		margin: 5px 5px;
+
+		font-size: 22px;
+	}
+
+	.article-img {
+		width: 60vw;
+	}
+
+	/*Önkéntesség-article (id="volunteering") és Volunteering-section (id="volunteering")*/
+	
+	section#volunteering-section p {
+		margin: 10px 10px;
+
+		font-size: 20px;
+	}
+
+	#volunteering-button {
+		font-size: 22px;
+	}
+
+	ul#volunteering-list li {
+		margin: 5px 40px;
+	}
 }
